@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="苏格拉底、柏拉图、亚里士多德：三个人，三种问法。给初中生的一页。">
+<title>三个人，三种问法 · 苏格拉底 柏拉图 亚里士多德</title>
+<style>
+/* ============================================================
+   设计令牌
+   ============================================================ */
+:root{
+  /* 纸与墨 */
+  --paper:#f6f1e7;
+  --paper-2:#efe8da;
+  --card:#fffdf8;
+  --ink:#1e1a15;
+  --ink-2:#4a4238;
+  --ink-3:#6f6455;
+  --gold-ink:#8a6413;
+  --soc-ink:#a24527;
+  --accent-text:var(--accent);
+  --rule:#d9cfbc;
+  --rule-2:#e8e0cf;
+
+  /* 三站主色：陶土 / 橄榄 / 石灰青 */
+  --soc:#a8482a;
+  --pla:#5b6b3a;
+  --ari:#3f6b78;
+  --gold:#b8892b;
+
+  /* 当前站 */
+  --accent:var(--soc);
+  --accent-soft:color-mix(in srgb, var(--accent) 12%, transparent);
+  --accent-line:color-mix(in srgb, var(--accent) 34%, transparent);
+
+  /* 排版 */
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Source Han Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  --serif:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --fs-base:clamp(17px,.55vw + 15.4px,19px);
+  --fs-scale:1;
+  --fs:calc(var(--fs-base) * var(--fs-scale));
+  --lh:1.78;
+  --measure:36em;
+  --r:14px;
+  --r-lg:22px;
+  --shadow:0 1px 2px rgba(30,26,21,.05),0 8px 28px -18px rgba(30,26,21,.35);
+  --shadow-lg:0 2px 4px rgba(30,26,21,.06),0 26px 60px -34px rgba(30,26,21,.45);
+}
+html[data-theme="dark"]{
+  --paper:#14110d;
+  --paper-2:#1b1712;
+  --card:#1f1a15;
+  --ink:#efe8dc;
+  --ink-2:#c9bfae;
+  --ink-3:#a99e8c;
+  --gold-ink:#d9b055;
+  --accent-text:var(--accent);
+  --soc-ink:var(--soc);
+  --rule:#332c23;
+  --rule-2:#2a241c;
+  --soc:#e0834f;
+  --pla:#a3bb6a;
+  --ari:#7fb6c6;
+  --gold:#d9b055;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px -20px rgba(0,0,0,.8);
+  --shadow-lg:0 2px 6px rgba(0,0,0,.5),0 30px 70px -40px rgba(0,0,0,.9);
+}
+@media (prefers-color-scheme:dark){
+  html[data-theme="auto"]{
+    --paper:#14110d;--paper-2:#1b1712;--card:#1f1a15;--ink:#efe8dc;--ink-2:#c9bfae;--ink-3:#948a79;
+    --rule:#332c23;--rule-2:#2a241c;--soc:#e0834f;--pla:#a3bb6a;--ari:#7fb6c6;--gold:#d9b055;
+    --ink-3:#a99e8c;--gold-ink:#d9b055;--accent-text:var(--accent);--soc-ink:var(--soc);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px -20px rgba(0,0,0,.8);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.5),0 30px 70px -40px rgba(0,0,0,.9);
+  }
+}
+
+/* ============================================================
+   基础
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  font:var(--fs)/var(--lh) var(--sans);
+  color:var(--ink);
+  background:var(--paper);
+  background-image:
+    radial-gradient(120% 60% at 50% -10%,color-mix(in srgb,var(--gold) 8%,transparent),transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  text-rendering:optimizeLegibility;
+  overflow-wrap:break-word;
+}
+img,svg{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{line-height:1.25;margin:0 0 .5em;font-weight:650;letter-spacing:-.01em}
+p{margin:0 0 1.05em}
+a{color:var(--accent);text-underline-offset:.22em;text-decoration-thickness:.06em}
+a:hover{text-decoration-thickness:.12em}
+strong{font-weight:700}
+code{font:0.92em/1.5 var(--mono);background:var(--paper-2);padding:.12em .38em;border-radius:6px;border:1px solid var(--rule-2)}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px}
+::selection{background:color-mix(in srgb,var(--gold) 35%,transparent)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:var(--card);padding:.6em 1em;border-radius:8px;box-shadow:var(--shadow)}
+
+/* ============================================================
+   布局
+   ============================================================ */
+.wrap{max-width:var(--measure);margin-inline:auto;padding:0 clamp(18px,5vw,28px)}
+.wide{max-width:min(1100px,92vw);margin-inline:auto;padding:0 clamp(18px,5vw,28px)}
+section{padding-block:clamp(38px,7vw,76px)}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+/* 站点头 */
+.station-head{
+  position:relative;margin-bottom:clamp(24px,4vw,40px);padding-top:clamp(20px,4vw,34px);
+  border-top:3px solid var(--accent);
+}
+.station-head::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:34px;
+  pointer-events:none;opacity:.55;
+  background-image:var(--motif,none);background-size:var(--motif-size,auto);
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1),transparent);
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,1),transparent);
+}
+.station-kicker{
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent-text);font-weight:700;margin-bottom:.4em;
+}
+.station-head h2{font-size:clamp(1.5rem,4.4vw,2.1rem);margin-bottom:.18em}
+.station-head .who{color:var(--ink-3);font-size:.92rem}
+.station-head .life{color:var(--ink-3);font-size:.88rem;font-variant-numeric:tabular-nums}
+
+/* 站点色与几何母题 */
+[data-station="soc"]{
+  --accent:var(--soc);
+  --motif:repeating-linear-gradient(90deg,var(--accent-line) 0 1px,transparent 1px 15px);
+  --motif-size:auto;
+}
+[data-station="pla"]{
+  --accent:var(--pla);
+  --motif:radial-gradient(circle at 20% 30%,var(--accent-line) 0 2px,transparent 2px),
+          radial-gradient(circle at 70% 70%,var(--accent-line) 0 2px,transparent 2px);
+  --motif-size:64px 64px,96px 96px;
+}
+[data-station="ari"]{
+  --accent:var(--ari);
+  --motif:linear-gradient(var(--accent-line) 1px,transparent 1px),
+          linear-gradient(90deg,var(--accent-line) 1px,transparent 1px);
+  --motif-size:22px 22px,22px 22px;
+}
+
+/* 四拍 */
+.beat{margin-block:clamp(26px,4.5vw,44px)}
+.beat > h3{
+  font-size:1.06rem;display:flex;gap:.6em;align-items:baseline;margin-bottom:.7em;
+}
+.beat > h3 .n{
+  flex:none;font:700 .78rem/1 var(--sans);letter-spacing:.04em;
+  color:#fffdf8;background:var(--accent-text);border-radius:999px;
+  width:1.9em;height:1.9em;display:grid;place-items:center;
+  transform:translateY(-.12em);
+}
+
+/* 卡片 */
+.card{
+  background:var(--card);border:1px solid var(--rule-2);border-radius:var(--r-lg);
+  padding:clamp(18px,3.4vw,28px);box-shadow:var(--shadow);
+}
+.card + .card{margin-top:clamp(14px,2.6vw,20px)}
+.card--flat{box-shadow:none;background:var(--paper-2)}
+.card h3:first-child,.card h4:first-child{margin-top:0}
+.grid{display:grid;gap:clamp(12px,2.4vw,18px)}
+@media (min-width:640px){.grid--2{grid-template-columns:1fr 1fr}.grid--3{grid-template-columns:repeat(3,1fr)}}
+
+/* ============================================================
+   文字层次：讲解用黑体，对白与引文用宋体
+   ============================================================ */
+.dialogue{
+  font-family:var(--serif);font-size:1.04em;line-height:1.85;
+  border-left:3px solid var(--accent);padding:.2em 0 .2em 1.05em;margin:1.2em 0;
+}
+.dialogue p{margin:0 0 .55em;text-indent:-1.15em;padding-left:1.15em}
+.dialogue p:last-child{margin-bottom:0}
+.dialogue .sp{font-weight:700;color:var(--accent-text);font-family:var(--sans);font-size:.86em;letter-spacing:.06em;margin-right:.35em;text-indent:0}
+blockquote{
+  font-family:var(--serif);font-size:1.12em;line-height:1.7;
+  margin:1.4em 0;padding:1.05em 1.2em;border-radius:var(--r);
+  background:var(--accent-soft);border:1px solid var(--rule-2);
+}
+blockquote p:last-child{margin-bottom:0}
+blockquote cite{display:block;margin-top:.6em;font:italic .8rem/1.5 var(--sans);color:var(--ink-3)}
+.pull{
+  font-family:var(--serif);font-size:clamp(1.25rem,3.6vw,1.7rem);line-height:1.5;
+  text-align:center;margin:clamp(28px,5vw,48px) 0;color:var(--ink);
+}
+.pull::before,.pull::after{content:"——";color:var(--accent);opacity:.5;margin-inline:.35em}
+
+/* 史实等级角标 */
+.tag{
+  display:inline-block;font:600 .7rem/1.6 var(--sans);letter-spacing:.04em;
+  padding:.1em .55em;border-radius:999px;border:1px solid var(--rule);
+  background:var(--paper-2);color:var(--ink-3);vertical-align:.1em;white-space:nowrap;
+}
+.tag--fact{color:var(--ari);border-color:color-mix(in srgb,var(--ari) 40%,transparent);background:color-mix(in srgb,var(--ari) 10%,transparent)}
+.tag--legend{color:var(--soc-ink);border-color:color-mix(in srgb,var(--soc) 40%,transparent);background:color-mix(in srgb,var(--soc) 10%,transparent)}
+.tag--analogy{color:var(--pla);border-color:color-mix(in srgb,var(--pla) 40%,transparent);background:color-mix(in srgb,var(--pla) 10%,transparent)}
+.note{font-size:.88rem;color:var(--ink-3);border-top:1px dashed var(--rule);padding-top:.9em;margin-top:1.2em}
+.note strong{color:var(--ink-2)}
+
+/* ============================================================
+   顶栏 / 进度 / 控件
+   ============================================================ */
+.topbar{
+  position:sticky;top:0;z-index:40;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar .inner{display:flex;align-items:center;gap:.55rem;padding:.5rem clamp(14px,4vw,26px);max-width:min(1100px,100%);margin-inline:auto}
+.brand{font:700 .86rem/1 var(--sans);letter-spacing:.02em;margin-right:auto;white-space:nowrap}
+.brand span{color:var(--ink-3);font-weight:500}
+.ctl{
+  display:inline-flex;align-items:center;gap:.28rem;
+  background:var(--card);border:1px solid var(--rule);border-radius:999px;
+  padding:.14rem;font-size:.78rem;
+}
+.ctl button{
+  appearance:none;border:0;background:transparent;color:var(--ink-2);
+  font:inherit;font-weight:600;cursor:pointer;border-radius:999px;
+  min-width:2.1rem;min-height:2.1rem;padding:0 .5rem;
+}
+.ctl button[aria-pressed="true"]{background:var(--accent);color:var(--card)}
+.ctl button:hover{color:var(--ink)}
+#progress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--soc),var(--gold),var(--ari));z-index:50;transition:width .12s linear}
+
+/* ============================================================
+   开场交互（纯 CSS，无 JS 也能用）
+   ============================================================ */
+.ask{
+  background:var(--card);border:1px solid var(--rule-2);border-radius:var(--r-lg);
+  padding:clamp(20px,4vw,34px);box-shadow:var(--shadow-lg);
+}
+.ask h2{font-size:clamp(1.35rem,4.6vw,1.9rem);text-align:center;margin-bottom:.2em}
+.ask .sub{text-align:center;color:var(--ink-3);font-size:.9rem;margin-bottom:1.4em}
+.choices{display:grid;gap:.7rem;margin:0 0 1.2em;padding:0;border:0}
+.choices label{
+  display:flex;gap:.85em;align-items:flex-start;cursor:pointer;
+  border:1.5px solid var(--rule);border-radius:var(--r);
+  padding:.85em 1em;background:var(--paper);transition:border-color .15s,background .15s,transform .15s;
+}
+.choices label:hover{border-color:var(--accent);transform:translateY(-1px)}
+.choices input{position:absolute;opacity:0;width:1px;height:1px}
+.choices .key{
+  flex:none;width:1.7em;height:1.7em;border-radius:50%;display:grid;place-items:center;
+  font:700 .8rem/1 var(--sans);background:var(--paper-2);color:var(--ink-2);
+  border:1px solid var(--rule);
+}
+.choices .txt{flex:1}
+.feedback{border-radius:var(--r);padding:0;overflow:hidden}
+.fb{
+  display:none;font-family:var(--serif);font-size:1.02em;line-height:1.8;
+  background:var(--accent-soft);border:1px solid var(--accent-line);
+  border-radius:var(--r);padding:1em 1.15em;margin-top:.2em;
+}
+.fb .who{font-family:var(--sans);font-weight:700;font-size:.8rem;letter-spacing:.06em;color:var(--accent-text);display:block;margin-bottom:.3em}
+#cA:checked ~ .feedback #fbA,
+#cB:checked ~ .feedback #fbB,
+#cC:checked ~ .feedback #fbC,
+#cD:checked ~ .feedback #fbD{display:block}
+#cA:checked ~ .choices label[for="cA"],
+#cB:checked ~ .choices label[for="cB"],
+#cC:checked ~ .choices label[for="cC"],
+#cD:checked ~ .choices label[for="cD"]{
+  border-color:var(--accent);background:var(--accent-soft);
+}
+#cA:checked ~ .choices label[for="cA"] .key,
+#cB:checked ~ .choices label[for="cB"] .key,
+#cC:checked ~ .choices label[for="cC"] .key,
+#cD:checked ~ .choices label[for="cD"] .key{background:var(--accent);color:var(--card);border-color:var(--accent)}
+.reveal-hint{text-align:center;color:var(--ink-3);font-size:.85rem;margin-top:.9em}
+.writein{display:grid;gap:.5rem;margin-top:.4rem}
+.writein textarea{
+  width:100%;min-height:4.4em;resize:vertical;font:inherit;color:var(--ink);
+  background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:.8em 1em;
+}
+.writein textarea:focus{border-color:var(--accent);outline:none}
+
+/* ============================================================
+   组件：抽屉 / 自测 / 积木 / 洞穴
+   ============================================================ */
+details.drawer{
+  border:1px solid var(--rule);border-radius:var(--r);background:var(--paper-2);
+  margin-top:1.1em;overflow:hidden;
+}
+details.drawer > summary{
+  cursor:pointer;list-style:none;padding:.85em 1.05em;font-weight:650;font-size:.95rem;
+  display:flex;align-items:center;gap:.6em;
+}
+details.drawer > summary::-webkit-details-marker{display:none}
+details.drawer > summary::before{
+  content:"＋";font-weight:700;color:var(--accent-text);width:1em;text-align:center;flex:none;
+}
+details.drawer[open] > summary::before{content:"－"}
+details.drawer > summary:hover{background:color-mix(in srgb,var(--accent) 7%,transparent)}
+details.drawer .body{padding:0 1.05em 1.1em;border-top:1px solid var(--rule-2)}
+
+.quiz{counter-reset:q;display:grid;gap:.7rem}
+.quiz details{
+  border:1px solid var(--rule-2);border-radius:var(--r);background:var(--card);overflow:hidden;
+}
+.quiz details > summary{
+  cursor:pointer;list-style:none;padding:.85em 1.05em;display:flex;gap:.7em;align-items:flex-start;
+}
+.quiz details > summary::-webkit-details-marker{display:none}
+.quiz details > summary::before{
+  counter-increment:q;content:counter(q);
+  flex:none;width:1.75em;height:1.75em;border-radius:50%;display:grid;place-items:center;
+  font:700 .78rem/1 var(--sans);background:var(--accent-soft);color:var(--accent-text);
+  border:1px solid var(--accent-line);
+}
+.quiz details .a{padding:0 1.05em 1em 3.4em;color:var(--ink-2);font-size:.95rem}
+.quiz details .a b{color:var(--ink)}
+.quiz details[open] > summary{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+
+.cave{display:grid;gap:.55rem;counter-reset:step}
+.cave ol{margin:0;padding:0;list-style:none;display:grid;gap:.55rem}
+.cave li{
+  display:flex;gap:.8em;align-items:flex-start;font-family:var(--serif);
+  background:var(--card);border:1px solid var(--rule-2);border-radius:var(--r);padding:.75em .95em;
+}
+.cave li::before{
+  counter-increment:step;content:counter(step);
+  flex:none;width:1.6em;height:1.6em;border-radius:6px;display:grid;place-items:center;
+  font:700 .74rem/1 var(--sans);background:var(--accent);color:var(--card);
+}
+.cave svg{width:100%;height:auto;border-radius:var(--r);border:1px solid var(--rule-2);background:var(--paper-2)}
+
+.syll{display:grid;gap:.5rem;font-family:var(--serif)}
+.syll .row{
+  display:flex;gap:.7em;align-items:center;background:var(--card);
+  border:1px solid var(--rule-2);border-left:3px solid var(--accent);border-radius:10px;padding:.6em .9em;
+}
+.syll .row b{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-3);flex:none;width:3.4em}
+.syll .row.out{border-left-style:double;border-left-width:5px;background:var(--accent-soft)}
+
+/* 对照表 */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule-2);border-radius:var(--r-lg);background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:44em;font-size:.94rem}
+th,td{padding:.8em .95em;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-2)}
+thead th{font-size:.82rem;letter-spacing:.04em;color:var(--ink-3);background:var(--paper-2);position:sticky;top:0}
+thead th:nth-child(2){color:var(--soc)}thead th:nth-child(3){color:var(--pla)}thead th:nth-child(4){color:var(--ari)}
+tbody th{font-weight:650;background:var(--paper-2);white-space:nowrap}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+
+/* 讲给同学听 */
+.try{
+  border:1.5px dashed var(--accent-line);border-radius:var(--r-lg);
+  padding:clamp(16px,3vw,24px);background:var(--accent-soft);
+}
+.try h3{margin-top:0;font-size:1rem;display:flex;gap:.5em;align-items:center}
+.try h3::before{content:"✎";color:var(--accent-text);font-size:1.1em}
+.try textarea{
+  width:100%;min-height:5em;resize:vertical;font:var(--fs)/1.7 var(--sans);color:var(--ink);
+  background:var(--card);border:1.5px solid var(--rule);border-radius:var(--r);padding:.85em 1em;margin-top:.6em;
+}
+.try .refs{display:grid;gap:.5rem;margin-top:.8rem}
+.try .refs div{font-size:.92rem;color:var(--ink-2);background:var(--card);border:1px solid var(--rule-2);border-radius:10px;padding:.6em .85em}
+.try .refs b{display:block;font:700 .74rem/1.6 var(--sans);letter-spacing:.06em;color:var(--accent-text)}
+
+/* 来源 */
+.sources{font-size:.9rem;color:var(--ink-2)}
+.sources ol{padding-left:1.3em;margin:0}
+.sources li{margin-bottom:.5em}
+.src-tag{font:600 .7rem/1 var(--sans);padding:.15em .5em;border-radius:999px;background:var(--paper-2);border:1px solid var(--rule);color:var(--ink-3);margin-right:.35em}
+
+footer{border-top:1px solid var(--rule);padding:clamp(28px,5vw,48px) 0;color:var(--ink-3);font-size:.9rem}
+
+/* 渐进出现 */
+.js .rise{opacity:0;transform:translateY(14px)}
+.js .rise.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none}
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+
+/* 窄屏（≤400px）：顶栏收口，避免把页面撑出横向溢出 */
+.topbar .inner{min-width:0}
+.brand{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:400px){
+  .topbar .inner{gap:.3rem;padding:.45rem 12px}
+  .brand{font-size:.8rem}
+  .brand span{display:none}
+  .ctl button{min-width:1.9rem;padding:0 .3rem;font-size:.74rem}
+}
+
+/* 打印：A4 对照卡一页 */
+@media print{
+  .topbar,#progress,.no-print{display:none !important}
+  .js .rise, .rise{opacity:1 !important;transform:none !important}
+  details > *:not(summary){display:block !important;content-visibility:visible !important}
+  details > summary{cursor:default}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .card,blockquote,.tablewrap,details.drawer{box-shadow:none;border-color:#bbb;break-inside:avoid}
+  details.drawer[open],details,summary{display:block}
+  details > .body{display:block !important}
+  section{padding-block:10pt}
+  .tablewrap{overflow:visible}
+  table{min-width:0;font-size:9.5pt}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt}
+}
+
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+#cA:focus-visible ~ .choices label[for="cA"],
+#cB:focus-visible ~ .choices label[for="cB"],
+#cC:focus-visible ~ .choices label[for="cC"],
+#cD:focus-visible ~ .choices label[for="cD"]{outline:2.5px solid var(--gold);outline-offset:3px}
+
+/* 三层对照（§3.5 高光） */
+.layers{display:grid;gap:clamp(12px,2.4vw,18px)}
+@media (min-width:860px){.layers{grid-template-columns:repeat(3,1fr)}}
+.layer{
+  position:relative;background:var(--card);border:1px solid var(--rule-2);border-radius:var(--r-lg);
+  padding:1.25rem 1.1rem 1.1rem;display:flex;flex-direction:column;gap:.65em;box-shadow:var(--shadow);
+}
+.layer::before{content:"";position:absolute;left:1.1rem;right:1.1rem;top:0;height:4px;border-radius:0 0 6px 6px;background:var(--accent)}
+.layer .when{font:700 .72rem/1 var(--sans);letter-spacing:.1em;color:var(--accent-text)}
+.layer .quote{font-family:var(--serif);font-size:1rem;line-height:1.75;flex:1}
+.layer .quote .grc{font-size:1.06rem;line-height:1.9}
+.layer .quote .lat{font-style:italic}
+.layer .who{font-size:.82rem;color:var(--ink-3);border-top:1px dashed var(--rule);padding-top:.6em}
+.layer .tagself{align-self:flex-start}
+.timeline{margin-top:1.2em;position:relative;padding-top:1.6em}
+.timeline .track{height:2px;background:var(--rule);position:relative;border-radius:2px}
+.timeline .track::before,.timeline .track::after{content:"";position:absolute;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline .track::before{left:0}.timeline .track::after{right:0}
+.timeline .marks{display:flex;justify-content:space-between;margin-top:.5em;font-size:.76rem;color:var(--ink-3)}
+.timeline .marks b{display:block;color:var(--ink-2);font-weight:650}
+
+/* 「换你更同意谁」三带 */
+.bands{display:grid;gap:clamp(12px,2.2vw,18px)}
+@media (min-width:760px){.bands{grid-template-columns:repeat(3,1fr)}}
+.band{background:var(--card);border:1px solid var(--rule-2);border-radius:var(--r);padding:1rem}
+.band h4{margin:0 0 .1em;font-size:.95rem}
+.band .q{font-family:var(--serif);color:var(--ink-2);font-size:.92rem;margin-bottom:.7em}
+.band details{border-top:1px solid var(--rule-2)}
+.band details:last-child{border-bottom:0}
+.band summary{cursor:pointer;list-style:none;padding:.5em 0;font-weight:650;font-size:.9rem;display:flex;gap:.5em;align-items:baseline}
+.band summary::-webkit-details-marker{display:none}
+.band summary .dot{flex:none;width:.6em;height:.6em;border-radius:50%;background:var(--accent);margin-top:.4em}
+.band details .cost{padding:0 0 .7em 1.1em;font-size:.88rem;color:var(--ink-2)}
+
+@media (max-width:639px){
+  table{min-width:32em;font-size:.88rem}
+  thead th:first-child,tbody th{position:sticky;left:0;z-index:2;background:var(--paper-2);box-shadow:1px 0 0 var(--rule-2)}
+  thead th:first-child{z-index:3}
+}
+.swipe-hint{display:none;font-size:.78rem;color:var(--ink-3);text-align:center;margin:.2em 0 .5em}
+@media (max-width:639px){.swipe-hint{display:block}}
+
+/* 桌面端：宽块突破阅读栏（阅读仍是 36em，宽块单独放宽） */
+@media (min-width:900px){
+  .layers,.tablewrap{width:min(1060px,92vw);margin-inline:calc(50% - min(530px,46vw))}
+  .tablewrap table{min-width:0}
+  .swipe-hint{display:none}
+}
+/* 长文本断行更均匀（CJK 两行时不留孤字） */
+.choices .txt,.band .q,.layer .quote p{text-wrap:pretty}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand">三个人，三种问法 <span>· 给初中生</span></div>
+    <div class="ctl" role="group" aria-label="正文字号">
+      <button type="button" id="fsDown" aria-label="缩小字号">A－</button>
+      <button type="button" id="fsUp" aria-label="放大字号">A＋</button>
+    </div>
+    <div class="ctl" role="group" aria-label="配色">
+      <button type="button" id="themeBtn" aria-pressed="false" aria-label="切换深浅色">◐</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== 开场 ===================== -->
+<section id="opening" data-station="soc" style="padding-top:clamp(28px,6vw,56px)">
+  <div class="wrap">
+    <h1 style="font-size:clamp(1.9rem,6.4vw,3rem);text-align:center;margin-bottom:.25em">三个人，三种问法</h1>
+    <p style="text-align:center;color:var(--ink-3);margin-bottom:clamp(22px,4vw,36px)">
+      苏格拉底 · 柏拉图 · 亚里士多德<br>
+      <span style="font-size:.9em">一页读完，约 8–10 分钟</span>
+    </p>
+
+    <div class="ask">
+      <h2 id="askq">敢问：何谓勇敢？</h2>
+      <p class="sub">先选一个（或自己写一句）。选完才会有回话。</p>
+
+      <input class="vh" type="radio" name="courage" id="cA">
+      <input class="vh" type="radio" name="courage" id="cB">
+      <input class="vh" type="radio" name="courage" id="cC">
+      <input class="vh" type="radio" name="courage" id="cD">
+
+      <div class="choices" role="radiogroup" aria-labelledby="askq">
+        <label for="cA"><span class="key">A</span><span class="txt">不畏危险。</span></label>
+        <label for="cB"><span class="key">B</span><span class="txt">心里害怕，仍旧去做该做之事。</span></label>
+        <label for="cC"><span class="key">C</span><span class="txt">无所畏惧。</span></label>
+        <label for="cD"><span class="key">D</span><span class="txt">我自己写一句（写在下面方框里）。</span></label>
+      </div>
+
+      <div class="writein">
+        <label for="own" style="font-size:.88rem;color:var(--ink-3)">我自己的说法：</label>
+        <textarea id="own" placeholder="勇敢是……"></textarea>
+      </div>
+
+      <div class="feedback" aria-live="polite">
+        <div class="fb" id="fbA"><span class="who">苏格拉底</span>此言甚善。然我想到一人：彼不谙水性，却跃入深水——你也称他勇敢么？若不能，则「不畏危险」一语，未尽其义。</div>
+        <div class="fb" id="fbB"><span class="who">苏格拉底</span>你所见，比许多人周全。然我再问一句：深夜闯过红灯，也算「该做之事」么？若「该做之事」尚须另断，则勇敢究竟为何，仍未有解。</div>
+        <div class="fb" id="fbC"><span class="who">苏格拉底</span>无所畏惧么？然则羞耻呢？失望呢？你既也怕这些，则「无所畏惧」四字，便不能成立。</div>
+        <div class="fb" id="fbD"><span class="who">苏格拉底</span>此答，我仍想再问：若做此事者是个孩子，你还称他勇敢么？</div>
+      </div>
+
+      <p class="reveal-hint" id="hook">他不代你作答。他只再问你一句。</p>
+    </div>
+
+    <p style="text-align:center;margin-top:clamp(22px,4vw,34px);font-family:var(--serif);font-size:1.06em">
+      如此问法，两千四百年前，有一位老人，在雅典市集上日日为之。<br>
+      他不著书，不收学费，只是问。
+    </p>
+    <p class="pull">他叫苏格拉底</p>
+    <p class="note">这一段追问的写法，参照柏拉图《拉刻斯篇》——那一篇通篇讨论「勇敢」，问到最后，并无结论。
+      这不是失手，是他有意如此。<span class="tag tag--fact">史料</span></p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 第一站 ===================== -->
+<section id="station-soc" data-station="soc">
+  <div class="wrap">
+    <div class="station-head">
+      <p class="station-kicker">第一站</p>
+      <h2>雅典市集</h2>
+      <p class="who">苏格拉底</p>
+      <p class="life">约前 470 — 前 399</p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">1</span>一个问题</h3>
+      <p>公元前 399 年的雅典，市集叫<strong>阿戈拉</strong>——买菜、闲谈、传消息、议政事，都在那里。苏格拉底便在这里与人攀谈。</p>
+      <p>他其貌不扬，一身旧袍，赤足而行。他不教人发财，也不教人胜诉。他问的是那种你从未想过、一经追问便答不上来的问题：</p>
+      <div class="grid grid--2">
+        <div class="card card--flat"><p style="margin:0;font-family:var(--serif)">勇敢是什么？</p></div>
+        <div class="card card--flat"><p style="margin:0;font-family:var(--serif)">正义是什么？</p></div>
+        <div class="card card--flat"><p style="margin:0;font-family:var(--serif)">「好」是什么？</p></div>
+        <div class="card card--flat"><p style="margin:0;font-family:var(--serif)">你凭什么说你<strong>知道</strong>？</p></div>
+      </div>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">2</span>他只做了一件事：问</h3>
+      <p>他不是在考较你。他常常先承认自己也不知道。他的动作极简单：</p>
+      <div class="card">
+        <div class="syll">
+          <div class="row"><b>你说</b><span>一个定义：勇敢是不怕危险。</span></div>
+          <div class="row"><b>他找</b><span>一个反例：那么不会泅水的人跳进深水，算勇敢么？</span></div>
+          <div class="row"><b>你改</b><span>你改定义：勇敢是明知危险仍做该做之事。</span></div>
+          <div class="row out"><b>他再找</b><span>再一个反例：那么半夜闯红灯，也算「该做的事」么？</span></div>
+        </div>
+      </div>
+      <p style="margin-top:1.1em">且看：<strong>他不曾给你答案，你的答案却因你自己，敲得更结实了。</strong></p>
+      <p class="note">《申辩篇》中他说，别人不懂却自以为懂，而他至少知道自己不懂——这便是他觉得自己「不比别人差」的全部底气。
+        <span class="tag tag--fact">史料</span><span style="font-size:.92em">（通行译法概括）</span></p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">3</span>他没有解决的事，和他付出的代价</h3>
+      <div class="card">
+        <p><strong>他未曾解决的</strong>：一生之中，没有为任何一问给出最后的答案。那些对话往往是散的，没有结论。</p>
+        <p style="margin-bottom:0"><strong>他的代价</strong>：他问得太多，开罪了城中有名望的人。公元前 399 年，他被控<strong>不敬神</strong>与<strong>败坏青年</strong>，判处死刑。他本可逃走——朋友已为他安排妥当——他没有走。他说：不能因旁人待我不义，我便行不义之事。</p>
+      </div>
+      <blockquote><p><strong>他没有留下一个字。</strong>他写的书，我们一本也没有。</p></blockquote>
+      <p class="note">审判的经过、拒绝逃亡的缘由，主要见于他的学生柏拉图所写的《申辩篇》与《克里同篇》。<span class="tag tag--fact">史料</span></p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">4</span>带走一句话</h3>
+      <blockquote><p>你以为你懂，可能只是你还没被问过。</p></blockquote>
+      <div class="try">
+        <h3>讲给同学听</h3>
+        <p style="margin:0;font-size:.92rem;color:var(--ink-2)">用你自己的话说说——苏格拉底何以宁可赴死，也不肯停止发问？</p>
+        <textarea aria-label="写下你自己的说法"></textarea>
+      </div>
+      <p style="margin-top:1.3em"><strong>还有一件必须知道的事</strong>：我们认识的苏格拉底，是<strong>他的学生写下来的</strong>他。柏拉图写他，色诺芬写他，喜剧作家阿里斯托芬在戏里，把他写成一个滑稽的人物。三个版本并不一样。</p>
+      <p>所以历史学家至今仍在争：<strong>那个真实的苏格拉底，究竟什么样？</strong></p>
+      <p class="note">日后你读到的每一句「他说」，都值得多问一句：这是谁记下来的。<span class="tag tag--fact">史料</span></p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 第二站 ===================== -->
+<section id="station-pla" data-station="pla">
+  <div class="wrap">
+    <div class="station-head">
+      <p class="station-kicker">第二站</p>
+      <h2>学园</h2>
+      <p class="who">柏拉图</p>
+      <p class="life">约前 427 — 前 347</p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">1</span>一个问题</h3>
+      <p>请先答我一问：<strong>你画的圆，没有一个是真的。那么你何以知道，「圆」是什么？</strong></p>
+      <figure style="margin:1.2em 0 0">
+        <svg viewBox="0 0 640 200" role="img" aria-label="三个手绘的歪圆与一个数学上完美的圆并排">
+          <rect width="640" height="200" fill="none"/>
+          <g fill="none" stroke="var(--ink-3)" stroke-width="2.5" stroke-linecap="round">
+            <path d="M40 100c0-30 22-52 50-52s48 20 50 47-20 55-49 56-51-21-51-51z"/>
+            <path d="M180 98c2-32 24-50 51-49s47 23 46 51-22 52-50 51-49-21-47-53z"/>
+            <path d="M320 102c-2-31 20-53 48-54s50 22 51 50-21 53-49 54-48-19-50-50z"/>
+          </g>
+          <circle cx="520" cy="100" r="52" fill="none" stroke="var(--accent)" stroke-width="3"/>
+          <circle cx="520" cy="100" r="3.5" fill="var(--accent)"/>
+          <g font-family="var(--sans)" font-size="13" fill="var(--ink-3)" text-anchor="middle">
+            <text x="90" y="182">你画的</text><text x="230" y="182">你画的</text><text x="370" y="182">你画的</text>
+          </g>
+          <text x="520" y="182" font-family="var(--sans)" font-size="13" fill="var(--accent)" text-anchor="middle" font-weight="700">你心里的</text>
+        </svg>
+      </figure>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">2</span>他只做了一件事：给「真的东西」另建了一层</h3>
+      <p>柏拉图是苏格拉底的学生。他承下老师的问题，另给了一个答案：</p>
+      <p class="pull">我们所见的一切，都只是「影子」<br>真正实在之物，在另一边</p>
+      <p>他最著名的比喻是<strong>洞穴</strong>：有一群人，自幼被缚于山洞之中，只能看面前的墙。身后有火，火与墙之间有人举着器物走过——墙上便是那些器物的影子。这些人一生只见影子，<strong>便以影子为全部的真实</strong>。</p>
+
+      <div class="cave">
+        <svg viewBox="0 0 640 280" role="img" aria-label="洞穴比喻示意图：左侧是墙与墙上的影子，墙前坐着两个被缚的人，中间是火，火后的高台上有人举着器物走过，右端是洞口与日光">
+  <defs>
+    <linearGradient id="caveLight" x1="1" x2="0">
+      <stop offset="0" stop-color="var(--gold)" stop-opacity=".5"/>
+      <stop offset="1" stop-color="var(--gold)" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="640" height="280" fill="var(--paper-2)"/>
+  <line x1="0" y1="240" x2="640" y2="240" stroke="var(--rule)" stroke-width="2"/>
+  <rect x="18" y="34" width="9" height="206" fill="var(--rule)"/>
+  <g fill="var(--ink-3)" opacity=".42">
+    <rect x="3" y="108" width="28" height="15" rx="2"/>
+    <ellipse cx="17" cy="168" rx="11" ry="25"/>
+    <ellipse cx="17" cy="215" rx="9" ry="17"/>
+  </g>
+  <g stroke="var(--soc)" stroke-width="4" fill="none" stroke-linecap="round">
+    <circle cx="98" cy="184" r="9" fill="var(--soc)" stroke="none"/>
+    <path d="M98 193v24M98 201l-20 9M98 201l-17 15M98 217H76M76 217v20"/>
+    <circle cx="152" cy="188" r="8.5" fill="var(--soc)" stroke="none"/>
+    <path d="M152 197v22M152 205l-19 8M152 205l-16 14M152 219h-21M131 219v18"/>
+  </g>
+  <ellipse cx="288" cy="239" rx="36" ry="7" fill="var(--soc)" opacity=".12"/>
+  <path d="M288 238c-17-13-9-32 0-43 3 10 7 12 10 6 4-10 2-22 10-29 7 13 4 27 11 34 7 7 5 19-5 27-8 6-20 7-26 5z" fill="var(--soc)"/>
+  <path d="M289 233c-9-8-5-18 0-25 2 6 4 7 6 3 2-5 1-12 5-16 4 7 2 14 6 18 4 4 2 10-3 14-5 4-11 5-14 6z" fill="var(--gold)" opacity=".85"/>
+  <rect x="356" y="198" width="156" height="8" rx="3" fill="var(--rule)"/>
+  <g stroke="var(--ink-2)" stroke-width="4" fill="none" stroke-linecap="round">
+    <circle cx="408" cy="132" r="9" fill="var(--ink-2)" stroke="none"/>
+    <path d="M408 141v36M408 150l15 12M408 150l-15 12M408 177l-10 21M408 177l12 21"/>
+  </g>
+  <rect x="430" y="110" width="30" height="17" rx="2" fill="var(--ink-3)"/>
+  <g stroke="var(--ink-2)" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7">
+    <circle cx="482" cy="142" r="8" fill="var(--ink-2)" stroke="none"/>
+    <path d="M482 150v30M482 158l13 11M482 158l-13 11M482 180l-9 18M482 180l11 18"/>
+  </g>
+  <rect x="512" y="0" width="128" height="280" fill="url(#caveLight)"/>
+  <line x1="512" y1="0" x2="512" y2="280" stroke="var(--rule)" stroke-width="2"/>
+  <circle cx="592" cy="74" r="22" fill="var(--gold)" opacity=".9"/>
+  <g style="font-family:var(--sans)" font-size="12.5" fill="var(--ink-3)">
+    <text x="6" y="268">墙上的影子</text>
+    <text x="96" y="268">被缚的人</text>
+    <text x="276" y="268">火</text>
+    <text x="380" y="268">举器物的人</text>
+    <text x="548" y="268">洞口</text>
+  </g>
+</svg>
+        <ol>
+          <li>他们自幼被缚，只能看面前的墙。</li>
+          <li>身后有火，火与墙之间有人举着器物走过。</li>
+          <li>墙上于是有了影子——他们以为那就是全部。</li>
+          <li>若有一人被解开，转过身来，火光会刺痛他的眼。</li>
+          <li>他走出洞口，起初什么也看不见，只觉得刺目。</li>
+          <li>最后他看见了太阳——也才明白，先前所见的都只是影子。</li>
+          <li>若他再回到洞里，眼睛还没适应黑暗，会被笑「上去一趟，把眼睛弄坏了」——<strong>甚至会被杀掉</strong>。</li>
+        </ol>
+        <p class="note">最后这一步出自《理想国》517a。Shorey 的注本在这一句下原注：<strong>「明显影射苏格拉底的下场」</strong>——这一笔把第二站接回了第一站。<span class="tag tag--fact">史料</span></p>
+      </div>
+
+      <p style="margin-top:1.2em">再说那个圆：你画的都不完美，可你心中另有一个「完美的圆」。柏拉图说：<strong>那个「完美的圆」才是更真实之物，你画的那些，不过是它的影子。</strong></p>
+      <p class="note">「理念／形式」很容易被误读成「想法」。它不是「我脑子里的一个念头」，而是<strong>让一个东西成为这种东西的那个标准</strong>。<span class="tag tag--analogy">类比</span></p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">3</span>他没解决的事</h3>
+      <div class="card">
+        <p><strong>他最出色的学生，不接受这个答案。</strong>（下一站就是他。）</p>
+        <p>他也不直接给结论：他写了三十余篇<strong>对话</strong>，里面的人一直在争，很多时候要你自己决定谁对。</p>
+        <p style="margin-bottom:0"><strong>他还欠着一笔账</strong>：他笔下苏格拉底永远是主角——而那个苏格拉底，或许既是他的老师，也是他自己的口。</p>
+      </div>
+      <p class="note">柏拉图一生写了三十余篇对话录，苏格拉底几乎都是主角。于是有了那个著名难题——哪些话是苏格拉底说的，哪些是柏拉图借他的嘴说的？<span class="tag tag--fact">史料</span></p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">4</span>带走一句话</h3>
+      <blockquote><p>你画的圆都不完美，可你为什么知道什么是圆的？</p></blockquote>
+      <div class="try">
+        <h3>讲给同学听</h3>
+        <p style="margin:0;font-size:.92rem;color:var(--ink-2)">不看网页，用五句话把洞穴比喻写一遍。</p>
+        <textarea aria-label="写下你自己的说法"></textarea>
+      </div>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">5</span>且说一句：传闻如何成了常识</h3>
+      <p>你多半听过「柏拉图学园门口写着：不懂几何的人不许进来」。此语流传极广，许多书都在引。</p>
+      <div class="card">
+        <p>实情是：<strong>这是一个不可核实的故事；它出现之时，距学园建立已晚约七百年。</strong></p>
+        <p style="margin-bottom:0">所能见到的最早记载，是公元六世纪一位名叫 <strong>Elias</strong> 的学者，为亚里士多德的书作注疏时写下的（《Eliae in Porphyrii Isagogen et Aristotelis categorias commentaria》, CAG XVIII.1, 1900, p. 118.13–19）。希腊原文 <code lang="grc">Ἀγεωμέτρητος μηδεὶς εἰσίτω</code> 是有据的，<strong>但「门口刻着」没有据。</strong></p>
+      </div>
+      <p class="note">此处不写成「学园门口刻着……」，而写成「后来的人说门口刻着……」——这是全页「标注不确定」的第一个示范。<span class="tag tag--legend">传说</span></p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 第三站 ===================== -->
+<section id="station-ari" data-station="ari">
+  <div class="wrap">
+    <div class="station-head">
+      <p class="station-kicker">第三站</p>
+      <h2>吕克昂</h2>
+      <p class="who">亚里士多德</p>
+      <p class="life">前 384 — 前 322</p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">1</span>一个问题</h3>
+      <p>你何以知道，<strong>明日太阳仍会升起</strong>？</p>
+      <p style="font-size:.92rem;color:var(--ink-3)">三答之中，藏着三种不同的「知道」。逐一点开看看。</p>
+      <details class="drawer"><summary>因为它昨天升了，前天也升了</summary>
+        <div class="body"><p>这是<strong>归纳</strong>：从见过的许多次，推到没见过的那一次。它极有用，却不是必然——太阳也可能有不再升起的一天，只是我们还没见过。</p></div></details>
+      <details class="drawer"><summary>因为地球在转动，这是物理规律</summary>
+        <div class="body"><p>这是<strong>推理</strong>：从一个更一般的道理，推出这一件事。它比归纳硬，但那个「更一般的道理」本身，仍要靠观察与检验才立得住。</p></div></details>
+      <details class="drawer"><summary>我不知道；但我知道它很可能升</summary>
+        <div class="body"><p>这是<strong>知道自己不知道</strong>——苏格拉底会赞成这一答。知道自己站在哪一级台阶上，比站在台阶上更重要。</p></div></details>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">2</span>他只做了一件事：不再问「完美的圆在哪」，而是去看、去数、去分类</h3>
+      <p>亚里士多德是柏拉图的学生，在学园待了约二十年。老师去世之后，他做了老师未曾做的事：</p>
+      <p><strong>他去观察活物。</strong>他描述、分类了几百种动物，研究它们的器官、习性与繁殖。他相信：<strong>要认识一物，先去看它实际如何，而不是先想它应当如何。</strong></p>
+      <p>他还做了一件影响两千年的事：<strong>把「怎样推理」变成一门可学的技艺</strong>——三段论。</p>
+      <div class="card">
+        <div class="syll">
+          <div class="row"><b>大前提</b><span>所有人都会死。</span></div>
+          <div class="row"><b>小前提</b><span>苏格拉底是人。</span></div>
+          <div class="row out"><b>结论</b><span>所以，苏格拉底会死。</span></div>
+        </div>
+        <details class="drawer" style="margin-top:1em"><summary>换成「有些人会死」会怎样？</summary>
+          <div class="body"><p>「有些人会死。苏格拉底是人。所以苏格拉底会死。」——<strong>前两句都对，结论却推不出来。</strong>三个人里，只有一个人会死，苏格拉底未必是那一个。</p>
+          <p style="margin-bottom:0">这正是三段论要管的事：不是问你「对不对」，而是问<strong>这个「所以」站不站得住</strong>。</p></div></details>
+      </div>
+      <p style="margin-top:1.1em">他约十七岁进学园，约前 335 年自建<strong>吕克昂</strong>。他惯于边走边讲，所以后来的人称他「散步的哲学家」。<span class="tag tag--legend">传说</span></p>
+      <p class="note">「散步的哲学家」（peripatetic）这一名称的由来，古人说法不一。</p>
+      <p class="note">他还在约前 343 年做过亚历山大的老师。<span class="tag tag--fact">史料</span><span style="font-size:.92em">（古代记载中传说成分不少）</span></p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">3</span>他错了——而且错得很具体</h3>
+      <p>这是这一站最该记住之处：</p>
+      <div class="grid grid--3">
+        <div class="card card--flat" style="border-left:3px solid var(--ari)">
+          <p style="margin:0"><strong>地球是宇宙的中心。</strong></p>
+          <p style="margin:.4em 0 0;color:var(--soc);font-weight:700">错。</p>
+        </div>
+        <div class="card card--flat" style="border-left:3px solid var(--ari)">
+          <p style="margin:0"><strong>重的物体落得比轻的快。</strong></p>
+          <p style="margin:.4em 0 0;color:var(--soc);font-weight:700">错。</p>
+        </div>
+        <div class="card card--flat" style="border-left:3px solid var(--ari)">
+          <p style="margin:0"><strong>万物都有目的。</strong><br><span style="font-size:.9em;color:var(--ink-3)">（石头往下掉，是因为它想回到地面）</span></p>
+          <p style="margin:.4em 0 0;color:var(--soc);font-weight:700">错。</p>
+        </div>
+      </div>
+      <p style="margin-top:1.2em"><strong>一个人，可以在方法上对，在结论上错。</strong>他「去看、去分类、要求证据」的方法留了下来，那些具体结论，被后人一一推翻。他的书后来在欧洲一度散失，靠阿拉伯语世界保存、注释，再译回欧洲。</p>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">4</span>带走一句话</h3>
+      <blockquote><p>不要只问世界应当如何；去看它实际如何。</p></blockquote>
+    </div>
+
+    <div class="beat">
+      <h3><span class="n">5</span>那句名言，是如何被制造出来的</h3>
+      <p>你多半听过：<strong>「吾爱吾师，吾更爱真理。」</strong>它被挂在亚里士多德名下，传了两千多年。实情分三层——请看这三张卡，顺序就是时间。</p>
+
+      <div class="layers">
+        <div class="layer">
+          <p class="when">前 4 世纪初</p>
+          <div class="quote">
+            <p class="grc" lang="grc">…σμικρὸν φροντίσαντες Σωκράτους, τῆς δὲ ἀληθείας πολὺ μᾶλλον…</p>
+            <p lang="en">“you … will give little thought to Socrates and much more to the truth”</p>
+          </div>
+          <p class="who">柏拉图《斐多篇》91c · 说话的是<strong>苏格拉底</strong><br>英译 Harold North Fowler</p>
+          <span class="tag tag--fact tagself">一手</span>
+        </div>
+        <div class="layer">
+          <p class="when">前 4 世纪中</p>
+          <div class="quote">
+            <p lang="en">“…specially as we are lovers of wisdom: <strong>for since both are dear to us, we are bound to prefer the truth.</strong>”</p>
+            <p style="font-size:.92rem;color:var(--ink-2)">中文大意：我们既是爱智慧的人；两边都可爱，但我们应当选择真理。</p>
+          </div>
+          <p class="who">亚里士多德《尼各马可伦理学》I.6<br>Bekker 编号 <strong>1096a11–15</strong><br>英译 D. P. Chase（Project Gutenberg #8438）</p>
+          <span class="tag tag--fact tagself">一手</span>
+        </div>
+        <div class="layer">
+          <p class="when">中世纪</p>
+          <div class="quote">
+            <p class="lat" lang="la">Amicus Plato, sed magis amica veritas.</p>
+            <p>「柏拉图是我的朋友，但真理是更好的朋友。」</p>
+          </div>
+          <p class="who">被归到亚里士多德名下——<br>其实是对 1096a11–15 的<strong>改写</strong></p>
+          <span class="tag tag--legend tagself">传说</span>
+        </div>
+      </div>
+
+      <div class="timeline" aria-hidden="true">
+        <div class="track"></div>
+        <div class="marks">
+          <span><b>前 4 世纪初</b>苏格拉底这样说</span>
+          <span><b>前 4 世纪中</b>亚里士多德这样写</span>
+          <span><b>中世纪</b>被压成一句格言</span>
+        </div>
+      </div>
+
+      <p style="margin-top:1.4em">须留意：他要批评的「理念论」，正是他的师友提出的——<strong>说这句话，于他是有代价的</strong>。</p>
+      <p><strong>那么这句话是假的么？</strong>不是。它抓住了真东西：亚里士多德确在批评自己的老师，他也确实说了「应当选择真理」。<strong>但它不是他的原话</strong>——是后人替他把话说得更漂亮，也更好记了。</p>
+      <p class="pull">好记 · 好听 · 能站队<br>三样齐了，一句话便能活两千年</p>
+      <p>反过来，日后你听到一句名言，就该问这三件事：<strong>它最早是谁说的？它原来有多长？是谁把它磨得这么好记的？</strong></p>
+      <div class="try">
+        <h3>讲给同学听</h3>
+        <p style="margin:0;font-size:.92rem;color:var(--ink-2)">不看这一页，把这句话的三层来历讲给同桌听：最早是谁说的？后来谁写了什么？最后变成了什么？</p>
+        <textarea aria-label="写下你讲给同学的三层来历"></textarea>
+        <div class="refs">
+          <div><b>更短的说法</b>这句话最早是苏格拉底说的，亚里士多德写的是另一句，最后被人压成了一句好记的拉丁格言。</div>
+          <div><b>更准的说法</b>最早是柏拉图《斐多篇》91c 里苏格拉底请朋友「少想我、多想真理」；亚里士多德在《尼各马可伦理学》I.6（1096a11–15）里说两边都可爱、但应当选择真理；中世纪它被压成 Amicus Plato…，并归到了亚里士多德名下。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 第四站 ===================== -->
+<section id="station-now">
+  <div class="wrap">
+    <div class="station-head" style="--accent:var(--gold);--accent-text:var(--gold-ink)">
+      <p class="station-kicker">第四站</p>
+      <h2>今天</h2>
+      <p class="who">三个人的方法，今天还在你手里</p>
+    </div>
+    <div class="grid grid--3">
+      <div class="card"><p style="margin:0 0 .4em;font-weight:700;color:var(--soc)">你正在做的事</p><p style="margin:0">追问「你这句话究竟是什么意思」</p><p style="margin:.9em 0 0;font-size:.86rem;color:var(--ink-3)">—— 苏格拉底的方法</p></div>
+      <div class="card"><p style="margin:0 0 .4em;font-weight:700;color:var(--pla)">你正在做的事</p><p style="margin:0">用模型、用数学，去描述看不见的东西</p><p style="margin:.9em 0 0;font-size:.86rem;color:var(--ink-3)">—— 柏拉图的方法</p></div>
+      <div class="card"><p style="margin:0 0 .4em;font-weight:700;color:var(--ari)">你正在做的事</p><p style="margin:0">观察、分类、要求证据、寻找反例</p><p style="margin:.9em 0 0;font-size:.86rem;color:var(--ink-3)">—— 亚里士多德的方法</p></div>
+    </div>
+    <p style="margin-top:1.4em"><strong>最后说一句实话</strong>：这三个人，谁也不曾「全对」。苏格拉底没有给答案；柏拉图那个「另一个世界」，连他自己最出色的学生都不接受；亚里士多德的地心说错了。<strong>他们留下来的不是答案，是三套提问的方式。</strong></p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 收束 ===================== -->
+<section id="summary">
+  <div class="wrap">
+    <div class="station-head" style="--accent:var(--gold);--accent-text:var(--gold-ink)">
+      <p class="station-kicker">收束</p>
+      <h2>三问对照</h2>
+      <p class="who">什么是真的 · 怎么才能知道 · 该怎么活</p>
+    </div>
+
+    <p class="swipe-hint">← 左右滑动，看三栏 →</p>
+    <div class="tablewrap">
+      <table>
+        <caption class="vh">苏格拉底、柏拉图、亚里士多德在三个基本问题上的对照</caption>
+        <thead>
+          <tr><th scope="col">三问</th><th scope="col">苏格拉底</th><th scope="col">柏拉图</th><th scope="col">亚里士多德</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">什么是真的</th>
+            <td>先别急着说「真的」；先说说你这个词，是什么意思。</td>
+            <td>我们看见的是影子；更真的是影子背后的原型。</td>
+            <td>真的东西就在这些东西里，去看、去分类便知。</td></tr>
+          <tr><th scope="row">怎么才能知道</th>
+            <td>靠对话：一个定义，加一个反例，反复地敲。</td>
+            <td>靠推理与数学：几何式的必然。</td>
+            <td>靠观察与归纳：看足够多次，并说明为什么。</td></tr>
+          <tr><th scope="row">该怎么活</th>
+            <td>德性即知识：没有人故意作恶，作恶是因为不知道。</td>
+            <td>灵魂里各部分各就各位，就是正义。</td>
+            <td>德性是练出来的习惯：勇敢在鲁莽与怯懦之间。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:clamp(26px,4vw,44px)">换你更同意谁？</h3>
+    <p style="color:var(--ink-3);font-size:.92rem">逐一点开。要看的不是对错，是他们各自的<strong>代价</strong>。</p>
+    <div class="bands">
+      <div class="band" style="--accent:var(--soc)">
+        <h4>什么是真的</h4>
+        <p class="q">你说的「真的」，究竟指什么？</p>
+        <details><summary><span class="dot"></span>苏格拉底</summary><div class="cost">先追问你的用词。<br><strong>代价</strong>：问到最后，他没有给出任何答案。</div></details>
+        <details><summary><span class="dot" style="background:var(--pla)"></span>柏拉图</summary><div class="cost">眼前是影子，更真的是背后的原型。<br><strong>代价</strong>：他最出色的学生，不接受这个答案。</div></details>
+        <details><summary><span class="dot" style="background:var(--ari)"></span>亚里士多德</summary><div class="cost">真的东西就在这些东西里，去看、去分类。<br><strong>代价</strong>：他确实看了、也分了，可地心说这类结论，错了。</div></details>
+      </div>
+      <div class="band" style="--accent:var(--pla)">
+        <h4>怎么才能知道</h4>
+        <p class="q">你凭什么说你「知道」？</p>
+        <details><summary><span class="dot" style="background:var(--soc)"></span>苏格拉底</summary><div class="cost">靠对话：一问一答，反复敲。<br><strong>代价</strong>：这样的对话，常常没有结论。</div></details>
+        <details><summary><span class="dot"></span>柏拉图</summary><div class="cost">靠推理与数学：几何式的必然。<br><strong>代价</strong>：那个「另一个世界」，无法被检验。</div></details>
+        <details><summary><span class="dot" style="background:var(--ari)"></span>亚里士多德</summary><div class="cost">靠观察与归纳：看得够多，再说出道理。<br><strong>代价</strong>：归纳出来的，也可能是错的——「重物落得快」就是。</div></details>
+      </div>
+      <div class="band" style="--accent:var(--ari)">
+        <h4>该怎么活</h4>
+        <p class="q">怎样才算一个好人？</p>
+        <details><summary><span class="dot" style="background:var(--soc)"></span>苏格拉底</summary><div class="cost">德性即知识；作恶出于无知。<br><strong>代价</strong>：他没能说服城邦，反被处死。</div></details>
+        <details><summary><span class="dot" style="background:var(--pla)"></span>柏拉图</summary><div class="cost">灵魂各部分各就各位，便是正义。<br><strong>代价</strong>：这要靠一个「另一个世界」作担保。</div></details>
+        <details><summary><span class="dot"></span>亚里士多德</summary><div class="cost">德性是练出来的习惯，勇敢在鲁莽与怯懦之间。<br><strong>代价</strong>：什么算「中间」，常要凭判断，一不小心就成了「凡事别走极端」的和稀泥。</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 自测 ===================== -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="station-head" style="--accent:var(--gold);--accent-text:var(--gold-ink)">
+      <p class="station-kicker">自测</p>
+      <h2>十二问</h2>
+      <p class="who">先答，再看。答错不算坏事——知道错在哪里，正是这一页想教的事。</p>
+    </div>
+    <div class="quiz">
+      <details><summary>苏格拉底一生未曾著书。</summary><div class="a"><b>对。</b>他没有留下一个字。我们所知的苏格拉底，来自他的学生与同代人的记述。</div></details>
+      <details><summary>苏格拉底被判死刑，罪名是什么？</summary><div class="a"><b>不敬神，与败坏青年。</b>见柏拉图《申辩篇》。</div></details>
+      <details><summary>「不懂几何者不得入内」这个故事，比学园建立晚了大约多少年？</summary><div class="a"><b>约七百年。</b>见 Elias 对《范畴篇》的注疏（CAG XVIII.1, 1900, p. 118.13–19）。所以它是<span class="tag tag--legend">传说</span>，不是事实。</div></details>
+      <details><summary>洞穴比喻出自柏拉图哪一部书？</summary><div class="a"><b>《理想国》</b>（卷六末至卷七初）。</div></details>
+      <details><summary>「吾爱吾师，吾更爱真理」是亚里士多德的原话么？</summary><div class="a"><b>不是。</b>它是后人把《尼各马可伦理学》1096a11–15 的意思，压成的一句拉丁格言。</div></details>
+      <details><summary>这句话最早的样子，出现在谁口中？</summary><div class="a"><b>苏格拉底。</b>见柏拉图《斐多篇》91c——请你们少想我，多想真理。</div></details>
+      <details><summary>亚里士多德做过谁的老师？</summary><div class="a"><b>亚历山大。</b>约前 343 年。古代记载里，这一段传说成分不少。</div></details>
+      <details><summary>亚里士多德在学园待了多久？</summary><div class="a"><b>约二十年。</b>他约十七岁入学园，直到柏拉图去世（前 347）。</div></details>
+      <details><summary>举一个亚里士多德错得很具体的地方。</summary><div class="a"><b>地心说；「重物落得快」；万物有目的。</b>三个都对不上后来的证据。</div></details>
+      <details><summary>三个人里，谁最强调「去看、去分类、要证据」？</summary><div class="a"><b>亚里士多德。</b>他把它变成了方法，而不只是态度。</div></details>
+      <details><summary>（开放）倘若苏格拉底今日在你班上，他第一个会问什么？</summary><div class="a">此题<b>没有标准答案</b>。写下来，明天看看你还同不同意自己。</div></details>
+      <details><summary>（开放）「知道自己不知道」，算不算一种本事？为什么？</summary><div class="a">此题<b>没有标准答案</b>。苏格拉底会说你已经答了一半。</div></details>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 讲给同学听 ===================== -->
+<section id="explain">
+  <div class="wrap">
+    <div class="station-head" style="--accent:var(--gold);--accent-text:var(--gold-ink)">
+      <p class="station-kicker">最后一件事</p>
+      <h2>讲给同学听</h2>
+      <p class="who">能讲出来，才算真的读懂了</p>
+    </div>
+    <div class="try">
+      <h3>一 · 用一句话说清苏格拉底与柏拉图的分别</h3>
+      <textarea aria-label="写下你的说法"></textarea>
+      <div class="refs">
+        <div><b>更短的说法</b>苏格拉底只问，柏拉图给了一个答案。</div>
+        <div><b>更准的说法</b>苏格拉底停在问题上；柏拉图把答案放到了「另一个世界」。</div>
+      </div>
+    </div>
+    <div class="try" style="margin-top:1.2em">
+      <h3>二 · 不看这一页，把洞穴比喻讲给同桌听</h3>
+      <textarea aria-label="写下你的说法"></textarea>
+      <div class="refs">
+        <div><b>更短的说法</b>他们把影子当成了真的东西。</div>
+        <div><b>更准的说法</b>被缚的人只见影子；转过身、走出洞口，才知道影子不是原物——而转身的第一步，眼睛会疼。</div>
+      </div>
+    </div>
+    <div class="try" style="margin-top:1.2em">
+      <h3>三 · 举一个你自己的例子：什么时候你「以为自己懂」，其实只是没被问过？</h3>
+      <textarea aria-label="写下你的说法"></textarea>
+      <div class="refs">
+        <div><b>提示</b>不必是大事。一个你一直用、却从未说清过的词，就够。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================== 来源与不确定声明 ===================== -->
+<section id="sources">
+  <div class="wrap sources">
+    <h2 style="font-size:1.3rem">来源，与不确定清单</h2>
+    <p>这一页上的每个断言，都标了等级。凡有据可查的，出处列在下面；凡不确定的，正文里已写明「传说」或「不可核实」。</p>
+    <ol>
+      <li><span class="src-tag">史料</span>柏拉图《拉刻斯篇》——通篇讨论「勇敢」，最后没有结论（第 0 节那段追问的写法参照此篇）。</li>
+      <li><span class="src-tag">史料</span>柏拉图《申辩篇》《克里同篇》——苏格拉底受审的经过，以及他拒绝逃亡的理由。</li>
+      <li><span class="src-tag">史料</span>柏拉图《理想国》——洞穴比喻（卷六末至卷七初）；灵魂三部分（卷四）。</li>
+      <li><span class="src-tag">一手</span>柏拉图《斐多篇》91c——最早的「多想真理，少想我」（Perseus 校勘本中该句落在 91c）；希腊原文与 Harold North Fowler 英译。</li>
+      <li><span class="src-tag">一手</span>亚里士多德《尼各马可伦理学》I.6（Bekker 1096a11–15）——「两边都可爱，但我们应当选择真理」；英译 D. P. Chase（Project Gutenberg #8438）。核验记录：#8438 全文不含 obligatory / closest / personal ties 等词，故上一版混入的另一译本句子已撤换。</li>
+      <li><span class="src-tag">一手</span>柏拉图《理想国》517a——回到洞里的人被嘲笑、甚至被杀；Shorey 注本注明此处影射苏格拉底的下场。</li>
+      <li><span class="src-tag">传说</span>「不懂几何者不得入内」——最早见于 Elias 对《范畴篇》的注疏（<em>Eliae in Porphyrii Isagogen et Aristotelis categorias commentaria</em>, CAG XVIII.1, Berlin 1900, p. 118.13–19），比学园建立晚约七百年。</li>
+      <li><span class="src-tag">传说</span>「散步的哲学家」（peripatetic）这一名称的由来，古人说法不一。</li>
+      <li><span class="src-tag">传说</span>拉丁格言 <em lang="la">Amicus Plato, sed magis amica veritas</em>——常被归到亚里士多德名下，实为对 1096a11–15 的改写。</li>
+    </ol>
+    <div class="note">
+      <p><strong>不确定的地方，明写在此——不确定就标注，核实了就改写：</strong></p>
+      <p>一、学园门楣题词是传说，不是事实；希腊原文有据，「刻在门上」没有据。</p>
+      <p>二、那句名言不是原话；它是三层压缩的结果，年份与说话人都与通常的印象不同。</p>
+      <p>三、<strong>已结清</strong>：Project Gutenberg #8438 的译者为 <strong>D. P. Chase</strong>。上一版这里写的是「未能核实，故不写译者名」；核实之后，正文引注已改成真名。这一步本身就是这一页想教的事——<strong>不确定 → 去核 → 变确定</strong>。</p>
+      <p style="margin-bottom:0"><strong>获取通道与日期</strong>：本页外部信息均经本机官方 API 通道取得（Wikipedia 正文经 <code>api.wikimedia.org</code>；《尼各马可伦理学》英译经 Project Gutenberg 本机直连），取用日期 2026-10-05。各句的等级标记即为其可靠度，请照此转述。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>单文件网页，零外部依赖：不联网、不加载外部字体与图片，断网可读。</p>
+    <p>关键词标记：<span class="tag tag--fact">史料</span> 有古代文本或学界共识支撑 ·
+      <span class="tag tag--legend">传说</span> 出处存疑 · <span class="tag tag--analogy">类比</span> 我自己编的比喻。</p>
+    <p style="margin-bottom:0">2026-10-05 · 「探索」工作区 · 给初中生的一页</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  /* 阅读进度 */
+  var bar = document.getElementById('progress');
+  var tick = function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0) + '%';
+  };
+  addEventListener('scroll', tick, { passive: true });
+  addEventListener('resize', tick);
+  tick();
+
+  /* 字号（可记忆） */
+  var scales = [0.92, 1, 1.08, 1.16], si = 1;
+  try { var s = localStorage.getItem('gp-fs'); if (s !== null) si = Math.min(scales.length - 1, Math.max(0, parseInt(s, 10) || 1)); } catch (e) {}
+  var setFs = function () {
+    root.style.setProperty('--fs-scale', String(scales[si]));
+    try { localStorage.setItem('gp-fs', String(si)); } catch (e) {}
+  };
+  setFs();
+  document.getElementById('fsUp').addEventListener('click', function () { si = Math.min(scales.length - 1, si + 1); setFs(); });
+  document.getElementById('fsDown').addEventListener('click', function () { si = Math.max(0, si - 1); setFs(); });
+
+  /* 自己写一句：一输入就等同选中 D */
+  var own = document.getElementById('own');
+  if (own) own.addEventListener('input', function () {
+    if (own.value.trim().length > 0) { var d = document.getElementById('cD'); if (d && !d.checked) d.checked = true; }
+  });
+
+  /* 深浅色：auto → 深 → 浅 */
+  var order = ['auto', 'dark', 'light'], ti = 0;
+  try { var th = localStorage.getItem('gp-theme'); if (th) { var k = order.indexOf(th); if (k >= 0) ti = k; } } catch (e) {}
+  var btn = document.getElementById('themeBtn');
+  var setTheme = function () {
+    root.setAttribute('data-theme', order[ti]);
+    btn.setAttribute('aria-pressed', order[ti] === 'dark' ? 'true' : 'false');
+    btn.setAttribute('aria-label', order[ti] === 'auto' ? '配色：跟随系统' : (order[ti] === 'dark' ? '配色：深色' : '配色：浅色'));
+    btn.textContent = order[ti] === 'auto' ? '◐' : (order[ti] === 'dark' ? '☾' : '☀');
+    try { localStorage.setItem('gp-theme', order[ti]); } catch (e) {}
+  };
+  setTheme();
+  btn.addEventListener('click', function () { ti = (ti + 1) % order.length; setTheme(); });
+
+  /* 渐进出现（关掉 JS 则完全不影响阅读） */
+  var targets = document.querySelectorAll('.card, blockquote, .pull, .try, figure, .layers, .bands, .quiz details, .drawer, .tablewrap');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    targets.forEach(function (el) { el.classList.add('rise'); io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

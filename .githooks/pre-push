@@ -1,0 +1,11 @@
+#!/bin/sh
+# 与 dsh-plugins 同构：不经 gh-guard 的 push 一律拒绝。
+# 闸门在 push 时注入 GH_GUARD_APPROVED；裸 `git push` 拿不到它。
+G="/Volumes/移动硬盘PHILIPS/dsharness_ph/dsh-plugins/tools/gh-guard/gh-guard.sh"
+if [ -z "${GH_GUARD_APPROVED:-}" ]; then
+  echo "⛔ pre-push 拒绝：这次 push 没有经过 gh-guard 闸门。" >&2
+  echo "   请改用：bash $G push [--approve \"<用户原话>\"]" >&2
+  echo "   （Windows/GUI 客户端同理；闸门负责配额、白名单、作者身份与体积检查）" >&2
+  exit 1
+fi
+exit 0
